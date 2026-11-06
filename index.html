@@ -323,13 +323,13 @@
         function exportPNG() {
             const p = getParams();
             const exportCanvas = document.createElement('canvas');
-            const scale = 2;
-            exportCanvas.width = 1200 * scale;
-            exportCanvas.height = 700 * scale;
+            const scale = 1;  // 1x 导出，约 5cm 宽，适合 A4 文件
+            exportCanvas.width = 600 * scale;
+            exportCanvas.height = 350 * scale;
             const ectx = exportCanvas.getContext('2d');
 
             ectx.scale(scale, scale);
-            ectx.translate(600, 350);
+            ectx.translate(300, 175);
             ectx.rotate(p.angle * Math.PI / 180);
 
             const sw = 520, sh = 280;
